@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Página Inicial</title>
+	<h:outputStylesheet library="css" name="logincss.css" />
+
+
+</h:head>
+<h:body>
+
+	<h:form id="vav">
+		<div style="margin: 30px;">
+			<p:commandLink value="Voltar" action="index?faces-redirect=true" />
+		</div>
+	</h:form>
+
+	<h1>Cadastro de usuário</h1>
+
+	<h:form id="cadastro-usuario-form">
+
+		<p:panelGrid columns="2">
+
+			<p:outputLabel for="nome" value="Nome" />
+			<p:inputText id="nome" value="#{usuarioController.usuario.nome}" />
+
+			<p:outputLabel for="apelido" value="Apelido" />
+			<p:inputText id="apelido"
+				value="#{usuarioController.usuario.apelido}" />
+
+			<p:outputLabel for="email" value="Email" />
+			<p:inputText id="email" value="#{usuarioController.usuario.email}" />
+
+			<p:outputLabel for="senha" value="Senha" />
+			<p:inputText id="senha" value="#{usuarioController.usuario.senha}" />
+
+		</p:panelGrid>
+		<p:commandButton value="Cadastrar"
+			actionListener="#{usuarioController.cadastrar}"
+			update="cadastro-usuario-form" />
+
+		<br />
+		<br />
+		<br />
+
+		<p:dataTable id="tabela" var="usuario"
+			value="#{usuarioController.usuarios}">
+
+			<p:column headerText="Nome">
+				<h:outputText value="#{usuario.nome}" />
+			</p:column>
+
+			<p:column headerText="Apelido">
+				<h:outputText value="#{usuario.apelido}" />
+			</p:column>
+
+			<p:column headerText="Email">
+				<h:outputText value="#{usuario.email}" />
+			</p:column>
+
+			<p:column headerText="Senha">
+				<h:outputText value="#{usuario.senha}" />
+			</p:column>
+
+			<p:column headerText="Actions">
+				<p:commandButton value="Excluir" styleClass="ui-button-danger"
+					actionListener="#{usuarioController.excluir(usuario)}">
+
+				</p:commandButton>
+				<p:commandButton value="Editar" styleClass="ui-button-warning" />
+			</p:column>
+
+		</p:dataTable>
+
+	</h:form>
+
+</h:body>
+</html>
