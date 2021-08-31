@@ -35,7 +35,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 Além disto é bom ter um editor para trabalhar com o código como: [Eclipse](https://www.eclipse.org/).
 
 
-### 🎲 Rodando o Back End (servidor)
+### 🎲 Rodando o servidor
 
 ```bash
 # Clone este repositório
