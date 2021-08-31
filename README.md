@@ -19,7 +19,6 @@ Foi construindo um ambiente onde um usuário externo tivesse a possibilidade de 
 As seguintes ferramentas foram usadas na construção do projeto:
 
 - [Java]
-- [Eclipse](https://www.eclipse.org/)
 - [Spring](https://spring.io/)
 - [Hibernate](https://hibernate.org/)
 - [PostegreSQL](https://www.postgresql.org/)
